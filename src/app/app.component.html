@@ -1,0 +1,13 @@
+<!-- src/app/app.component.html -->
+<div class="card-gallery">
+  <div *ngFor="let card of cards" class="card">
+    <div class="card-header">
+      <h2>{{ card.title }}</h2>
+      <h3>{{ card.subtitle }}</h3>
+    </div>
+    <img [src]="card.image" alt="{{ card.title }}">
+    <div class="card-content">
+      <p>{{ card.content }}</p>
+    </div>
+  </div>
+</div>
