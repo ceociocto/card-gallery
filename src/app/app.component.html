@@ -1,13 +1,44 @@
 <!-- src/app/app.component.html -->
-<div class="card-gallery">
-  <div *ngFor="let card of cards" class="card">
+<div class="card-gallery single-column">
+  <div *ngFor="let card of originalCards" class="card">
     <div class="card-header">
       <h2>{{ card.title }}</h2>
       <h3>{{ card.subtitle }}</h3>
     </div>
     <img [src]="card.image" alt="{{ card.title }}">
-    <div class="card-content">
-      <p>{{ card.content }}</p>
+    <button class="card-button">查看详情</button>
+  </div>
+</div>
+
+<div class="card-gallery multi-column">
+  <div class="column other-cards-left">
+    <div *ngFor="let card of otherCardsLeft" class="card">
+      <div class="card-header">
+        <h2>{{ card.title }}</h2>
+        <h3>{{ card.subtitle }}</h3>
+      </div>
+      <img [src]="card.image" alt="{{ card.title }}">
+      <button class="card-button">查看详情</button>
+    </div>
+  </div>
+  <div class="column other-cards-middle">
+    <div *ngFor="let card of otherCardsMiddle" class="card">
+      <div class="card-header">
+        <h2>{{ card.title }}</h2>
+        <h3>{{ card.subtitle }}</h3>
+      </div>
+      <img [src]="card.image" alt="{{ card.title }}">
+      <button class="card-button">查看详情</button>
+    </div>
+  </div>
+  <div class="column summary-cards">
+    <div *ngFor="let card of summaryCards" class="card summary">
+      <div class="card-header">
+        <h2>{{ card.title }}</h2>
+        <h3>{{ card.subtitle }}</h3>
+      </div>
+      <img [src]="card.image" alt="{{ card.title }}">
+      <button class="card-button">查看摘要</button>
     </div>
   </div>
 </div>
